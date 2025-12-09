@@ -1,146 +1,67 @@
-// DOM Elements
-const menuToggle = document.getElementById('menuToggle');
-const navLinks = document.getElementById('navLinks');
-const navLinksArray = document.querySelectorAll('.nav-link');
-const bookBtn = document.querySelector('.book-btn');
-const contactForm = document.getElementById('contactForm');
+// ==================== GLOBAL INITIALIZATION ====================
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('🚀 Travora Voyagers Website Loaded');
+    
 
-// Mobile Menu Toggle
-if (menuToggle) {
+    initNavigation();
+    initCarousels();
+    initTestimonialSlider();
+    initFAQAccordion();
+    initForms();
+    initBlogFilter();
+    initSmoothScrolling();
+    
+    document.body.style.opacity = '0';
+    setTimeout(() => {
+        document.body.style.transition = 'opacity 0.5s ease';
+        document.body.style.opacity = '1';
+    }, 100);
+});
+
+// ==================== NAVIGATION ====================
+function initNavigation() {
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    
+    if (!menuToggle || !navLinks) return;
+    
+    // Mobile menu toggle
     menuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
-        menuToggle.innerHTML = navLinks.classList.contains('active') 
-            ? '<i class="fas fa-times"></i>' 
-            : '<i class="fas fa-bars"></i>';
+        const icon = menuToggle.querySelector('i');
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
     });
-}
-
-// Close mobile menu when clicking on a link
-navLinksArray.forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        if (menuToggle) {
-            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-        }
-    });
-});
-
-// Book Now Button
-if (bookBtn) {
-    bookBtn.addEventListener('click', () => {
-        window.location.href = 'contact.html';
-    });
-}
-
-// Navbar scroll effect
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
-        navbar.style.padding = '15px 0';
-        navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
-    } else {
-        navbar.style.padding = '20px 0';
-        navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
-    }
-});
-
-// Contact Form Submission
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form values
-        const firstName = document.getElementById('firstName').value;
-        const lastName = document.getElementById('lastName').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        const subject = document.getElementById('subject').value;
-        const message = document.getElementById('message').value;
-        const newsletter = document.getElementById('newsletter').checked;
-        
-        // In a real application, you would send this data to a server
-        console.log('Form submitted:', { 
-            firstName, 
-            lastName, 
-            email, 
-            phone, 
-            subject, 
-            message, 
-            newsletter 
-        });
-        
-        // Show success message
-        alert('Thank you for your message! We will get back to you within 24 hours.');
-        
-        // Reset form
-        contactForm.reset();
-    });
-}
-
-// FAQ Accordion
-const faqQuestions = document.querySelectorAll('.faq-question');
-if (faqQuestions.length > 0) {
-    faqQuestions.forEach(question => {
-        question.addEventListener('click', () => {
-            const answer = question.nextElementSibling;
-            const isActive = answer.classList.contains('active');
-            
-            // Close all answers
-            document.querySelectorAll('.faq-answer').forEach(ans => {
-                ans.classList.remove('active');
-                ans.previousElementSibling.classList.remove('active');
-            });
-            
-            // Open current answer if it was closed
-            if (!isActive) {
-                answer.classList.add('active');
-                question.classList.add('active');
+    
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            if (menuToggle) {
+                const icon = menuToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
             }
         });
     });
-}
-
-// Blog Categories Filter
-const categoryBtns = document.querySelectorAll('.category-btn');
-if (categoryBtns.length > 0) {
-    categoryBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Remove active class from all buttons
-            categoryBtns.forEach(b => b.classList.remove('active'));
-            // Add active class to clicked button
-            btn.classList.add('active');
-            
-            // In a real application, you would filter blog posts here
-            console.log('Filtering by category:', btn.textContent);
-        });
-    });
-}
-
-// Newsletter Subscription
-const newsletterForms = document.querySelectorAll('.newsletter-form');
-newsletterForms.forEach(form => {
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const emailInput = this.querySelector('input[type="email"]');
-        const email = emailInput.value;
-        
-        if (email) {
-            // In a real application, you would send this to a server
-            console.log('Newsletter subscription:', email);
-            alert('Thank you for subscribing to our newsletter!');
-            emailInput.value = '';
+    
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('.navbar');
+        if (navbar) {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
         }
     });
-});
-
-// Set active navigation link based on current page
-function setActiveNavLink() {
+    
+    // navigation link
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    navLinksArray.forEach(link => {
+    document.querySelectorAll('.nav-link').forEach(link => {
         const linkHref = link.getAttribute('href');
-        if (linkHref === currentPage || 
-            (currentPage === '' && linkHref === 'index.html') ||
-            (currentPage.includes(linkHref.replace('.html', '')))) {
+        if (linkHref === currentPage) {
             link.classList.add('active');
         } else {
             link.classList.remove('active');
@@ -148,29 +69,342 @@ function setActiveNavLink() {
     });
 }
 
-// Initialize the page
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('Travora Voyagers website loaded successfully!');
-    setActiveNavLink();
+// ==================== CAROUSEL SYSTEM ====================
+function initCarousels() {
+    const carousels = document.querySelectorAll('.carousel-container');
     
-    // Add animation to elements on scroll
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
+    if (carousels.length === 0) {
+        console.log('No carousels found');
+        return;
+    }
+    
+    console.log(`Found ${carousels.length} carousel(s)`);
+    
+    carousels.forEach((carousel, index) => {
+        console.log(`Initializing carousel ${index + 1}`);
+        new Carousel(carousel);
+    });
+}
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
-                observer.unobserve(entry.target);
+class Carousel {
+    constructor(carouselElement) {
+        this.element = carouselElement;
+        this.track = carouselElement.querySelector('.carousel-track');
+        this.slides = Array.from(carouselElement.querySelectorAll('.carousel-slide'));
+        this.dots = Array.from(carouselElement.querySelectorAll('.dot'));
+        this.prevBtn = carouselElement.querySelector('.prev-btn');
+        this.nextBtn = carouselElement.querySelector('.next-btn');
+        
+        this.currentSlide = 0;
+        this.totalSlides = this.slides.length;
+        this.autoSlideInterval = null;
+        this.isTransitioning = false;
+        
+        console.log(`Carousel initialized with ${this.totalSlides} slides`);
+        
+        this.init();
+    }
+    
+    init() {
+        // Set initial state
+        this.updateCarousel();
+        
+        // Button event listeners
+        if (this.prevBtn) {
+            this.prevBtn.addEventListener('click', () => {
+                console.log('Previous button clicked');
+                this.prevSlide();
+            });
+        }
+        
+        if (this.nextBtn) {
+            this.nextBtn.addEventListener('click', () => {
+                console.log('Next button clicked');
+                this.nextSlide();
+            });
+        }
+        
+        // Dot event listeners
+        this.dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                console.log(`Dot ${index} clicked`);
+                this.goToSlide(index);
+            });
+        });
+        
+        // Auto slide
+        this.startAutoSlide();
+        
+        // Pause on hover
+        this.element.addEventListener('mouseenter', () => {
+            this.stopAutoSlide();
+        });
+        
+        this.element.addEventListener('mouseleave', () => {
+            this.startAutoSlide();
+        });
+    }
+    
+    updateCarousel() {
+        // Update track position
+        const translateX = -this.currentSlide * 100;
+        this.track.style.transform = `translateX(${translateX}%)`;
+        
+        // Update active slide
+        this.slides.forEach((slide, index) => {
+            slide.classList.toggle('active', index === this.currentSlide);
+        });
+        
+        // Update dots
+        this.dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === this.currentSlide);
+        });
+        
+        console.log(`Carousel updated to slide ${this.currentSlide + 1}/${this.totalSlides}`);
+    }
+    
+    nextSlide() {
+        if (this.isTransitioning) return;
+        
+        this.isTransitioning = true;
+        this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+        this.updateCarousel();
+        
+        setTimeout(() => {
+            this.isTransitioning = false;
+        }, 600);
+    }
+    
+    prevSlide() {
+        if (this.isTransitioning) return;
+        
+        this.isTransitioning = true;
+        this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+        this.updateCarousel();
+        
+        setTimeout(() => {
+            this.isTransitioning = false;
+        }, 600);
+    }
+    
+    goToSlide(index) {
+        if (this.isTransitioning || index === this.currentSlide) return;
+        
+        this.isTransitioning = true;
+        this.currentSlide = index;
+        this.updateCarousel();
+        
+        setTimeout(() => {
+            this.isTransitioning = false;
+        }, 600);
+    }
+    
+    startAutoSlide() {
+        if (this.autoSlideInterval) return;
+        
+        this.autoSlideInterval = setInterval(() => {
+            this.nextSlide();
+        }, 5000); // Change slide every 5 seconds
+        
+        console.log('Auto slide started');
+    }
+    
+    stopAutoSlide() {
+        if (this.autoSlideInterval) {
+            clearInterval(this.autoSlideInterval);
+            this.autoSlideInterval = null;
+            console.log('Auto slide stopped');
+        }
+    }
+}
+
+// ==================== TESTIMONIAL SLIDER ====================
+function initTestimonialSlider() {
+    const slider = document.querySelector('.testimonials-slider');
+    if (!slider) return;
+    
+    const slides = slider.querySelectorAll('.testimonial-slide');
+    const dots = slider.querySelectorAll('.testimonial-dot');
+    
+    if (slides.length === 0) return;
+    
+    let currentSlide = 0;
+    let interval = null;
+    
+    // Set initial slide
+    updateTestimonialSlider();
+    
+    // Add click events to dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentSlide = index;
+            updateTestimonialSlider();
+            resetAutoSlide();
+        });
+    });
+    
+    function updateTestimonialSlider() {
+        // Hide all slides
+        slides.forEach(slide => slide.classList.remove('active'));
+        
+        // Show current slide
+        slides[currentSlide].classList.add('active');
+        
+        // Update dots
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+        });
+    }
+    
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateTestimonialSlider();
+    }
+    
+    function startAutoSlide() {
+        interval = setInterval(nextSlide, 6000);
+    }
+    
+    function resetAutoSlide() {
+        if (interval) {
+            clearInterval(interval);
+            startAutoSlide();
+        }
+    }
+    
+    // Start auto slide
+    startAutoSlide();
+}
+
+// ==================== FAQ ACCORDION ====================
+function initFAQAccordion() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    if (faqItems.length === 0) return;
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            toggleFAQ(item);
+        });
+    });
+    
+    // Open first FAQ by default
+    faqItems[0].classList.add('active');
+    
+    function toggleFAQ(item) {
+        const isActive = item.classList.contains('active');
+        
+        // Close all items
+        faqItems.forEach(faq => faq.classList.remove('active'));
+        
+        // Open current item if it was closed
+        if (!isActive) {
+            item.classList.add('active');
+        }
+    }
+}
+
+// ==================== FORM HANDLER ====================
+function initForms() {
+    const forms = document.querySelectorAll('form');
+    if (forms.length === 0) return;
+    
+    forms.forEach(form => {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            handleSubmit(form);
+        });
+    });
+    
+    function handleSubmit(form) {
+        const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');
+        let isValid = true;
+        
+        inputs.forEach(input => {
+            if (!input.value.trim()) {
+                isValid = false;
+                input.style.borderColor = '#dc3545';
+            } else {
+                input.style.borderColor = '';
+            }
+            
+            // Email validation
+            if (input.type === 'email' && input.value) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(input.value)) {
+                    isValid = false;
+                    input.style.borderColor = '#dc3545';
+                }
             }
         });
-    }, observerOptions);
+        
+        if (isValid) {
+            // Show success message
+            alert('Thank you! Your message has been sent successfully.');
+            form.reset();
+        } else {
+            alert('Please fill in all required fields correctly.');
+        }
+    }
+}
 
-    // Observe elements for animation
-    document.querySelectorAll('.reason-card, .destination-card, .testimonial-card, .mission-card, .team-member, .blog-post, .faq-item').forEach(el => {
-        el.style.opacity = '0';
-        observer.observe(el);
+// ==================== BLOG FILTER ====================
+function initBlogFilter() {
+    const categoryBtns = document.querySelectorAll('.category-btn');
+    if (categoryBtns.length === 0) return;
+    
+    const blogCards = document.querySelectorAll('.blog-card');
+    
+    categoryBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const category = btn.textContent.toLowerCase();
+            filterBlogs(category);
+            updateActiveButton(btn);
+        });
     });
-});
+    
+    function filterBlogs(category) {
+        blogCards.forEach(card => {
+            const cardCategory = card.querySelector('.blog-category')?.textContent.toLowerCase() || '';
+            
+            if (category === 'all stories' || cardCategory === category) {
+                card.style.display = 'block';
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100);
+            } else {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.display = 'none';
+                }, 300);
+            }
+        });
+    }
+    
+    function updateActiveButton(activeBtn) {
+        categoryBtns.forEach(btn => btn.classList.remove('active'));
+        activeBtn.classList.add('active');
+    }
+}
+
+// ==================== SMOOTH SCROLLING ====================
+function initSmoothScrolling() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+}

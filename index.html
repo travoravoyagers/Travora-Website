@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travora Voyagers - Home</title>
+    <title>Travora Voyagers</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -15,18 +16,17 @@
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">
-                <img src="assets/images/logo.png" alt="Travora Voyagers Logo" class="logo-img">
-                <span class="logo-text">
+                <img src="assets/images/logo.png" alt="Travora Voyagers" class="logo-img">
+                <div class="logo-text">
                     <span class="logo-main">TRAVORA</span>
                     <span class="logo-sub">VOYAGERS</span>
-                </span>
+                </div>
             </a>
             <div class="nav-links" id="navLinks">
                 <a href="index.html" class="nav-link active">Home</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="blogs.html" class="nav-link">Blogs</a>
                 <a href="contact.html" class="nav-link">Contact</a>
-                <button class="book-btn">Book Now</button>
             </div>
             <div class="menu-toggle" id="menuToggle">
                 <i class="fas fa-bars"></i>
@@ -36,12 +36,14 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Discover <span class="highlight">Extraordinary</span> Journeys</h1>
-            <p class="hero-subtitle">Experience the world like never before with curated travel adventures</p>
-            <div class="hero-btns">
-                <a href="about.html" class="btn-primary">Learn More</a>
-                <a href="contact.html" class="btn-secondary">Plan Your Trip</a>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Discover <span class="highlight">Extraordinary</span> Journeys</h1>
+                <p class="hero-subtitle">Experience the world through curated adventures that transform ordinary trips into lifelong memories</p>
+                <div class="hero-btns">
+                    <a href="about.html" class="btn btn-primary">Explore Our Story</a>
+                    <a href="contact.html" class="btn btn-secondary">Start Your Journey</a>
+                </div>
             </div>
         </div>
         <div class="scroll-indicator">
@@ -49,34 +51,58 @@
         </div>
     </section>
 
-    <!-- Featured Destinations -->
+    <!-- Featured Destinations Carousel -->
     <section class="featured-section">
         <div class="container">
             <h2 class="section-title">Featured <span class="highlight">Destinations</span></h2>
-            <div class="destinations-grid">
-                <div class="destination-card">
-                    <div class="destination-img" style="background-image: url('https://images.unsplash.com/photo-1516483638261-f4dbaf036963?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');"></div>
-                    <div class="destination-content">
-                        <h3>Mountain Adventures</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        <a href="blogs.html" class="btn-small">Explore</a>
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <!-- Slide 1 -->
+                    <div class="carousel-slide active" style="background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');">
+                        <div class="slide-content">
+                            <h3>Swiss Alpine Wonderland</h3>
+                            <p>Experience breathtaking mountain vistas, pristine lakes, and charming villages in the heart of the Alps.</p>
+                            <a href="#" class="btn btn-primary">Explore Package</a>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');">
+                        <div class="slide-content">
+                            <h3>Tropical Island Paradise</h3>
+                            <p>Discover crystal-clear waters, white sandy beaches, and vibrant coral reefs in our exclusive island getaways.</p>
+                            <a href="#" class="btn btn-primary">Discover Escape</a>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');">
+                        <div class="slide-content">
+                            <h3>Nordic Northern Lights</h3>
+                            <p>Witness the magical aurora borealis dance across Arctic skies in this once-in-a-lifetime adventure.</p>
+                            <a href="#" class="btn btn-primary">View Adventure</a>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');">
+                        <div class="slide-content">
+                            <h3>Safari Wildlife Expedition</h3>
+                            <p>Embark on an unforgettable journey through Africa's most spectacular wildlife reserves and national parks.</p>
+                            <a href="#" class="btn btn-primary">Start Expedition</a>
+                        </div>
                     </div>
                 </div>
-                <div class="destination-card">
-                    <div class="destination-img" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');"></div>
-                    <div class="destination-content">
-                        <h3>Beach Escapes</h3>
-                        <p>Sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-                        <a href="blogs.html" class="btn-small">Explore</a>
+                <div class="carousel-nav">
+                    <button class="carousel-btn prev-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="carousel-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
                     </div>
-                </div>
-                <div class="destination-card">
-                    <div class="destination-img" style="background-image: url('https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');"></div>
-                    <div class="destination-content">
-                        <h3>Cultural Tours</h3>
-                        <p>Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                        <a href="blogs.html" class="btn-small">Explore</a>
-                    </div>
+                    <button class="carousel-btn next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -85,39 +111,36 @@
     <!-- Why Choose Us -->
     <section class="why-section">
         <div class="container">
-            <h2 class="section-title">Why Choose <span class="highlight">Travora Voyagers</span>?</h2>
+            <h2 class="section-title">Why Choose <span class="highlight">Travora Voyagers</span></h2>
             <div class="reasons">
                 <div class="reason-card">
                     <div class="reason-icon">
-                        <i class="fas fa-star"></i>
+                        <i class="fas fa-award"></i>
                     </div>
-                    <h3>Premium Quality</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h3>Award-Winning Service</h3>
+                    <p>Recognized globally for exceptional service and unforgettable travel experiences since 2010.</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3>Global Network</h3>
+                    <p>Access to exclusive destinations and experiences through our extensive worldwide partnerships.</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3>Personalized Safety</h3>
+                    <p>Comprehensive safety protocols tailored to each destination for your peace of mind.</p>
                 </div>
                 <div class="reason-card">
                     <div class="reason-icon">
                         <i class="fas fa-heart"></i>
                     </div>
                     <h3>Sustainable Travel</h3>
-                    <p>Sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                    <p>Committed to eco-friendly practices and supporting local communities worldwide.</p>
                 </div>
-                <div class="reason-card">
-                    <div class="reason-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>24/7 Support</h3>
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                </div>
-                <div class="reason-card">
-                    <div class="reason-icon">
-                        <i class="fas fa-award"></i>
-                    </div>
-                    <h3>Award Winning</h3>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate.</p>
-                </div>
-            </div>
-            <div class="text-center" style="margin-top: 40px;">
-                <a href="about.html" class="btn-primary">Learn More About Us</a>
             </div>
         </div>
     </section>
@@ -125,34 +148,48 @@
     <!-- Testimonials -->
     <section class="testimonials-section">
         <div class="container">
-            <h2 class="section-title">What Our <span class="highlight">Travelers Say</span></h2>
-            <div class="testimonials">
-                <div class="testimonial-card">
+            <h2 class="section-title">Traveler <span class="highlight">Stories</span></h2>
+            <div class="testimonials-slider">
+                <div class="testimonial-slide active">
                     <div class="testimonial-content">
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+                        "Our journey with Travora Voyagers was nothing short of magical. Every detail was meticulously planned, and the experiences were beyond our expectations. The attention to personal preferences made us feel truly special."
                     </div>
                     <div class="testimonial-author">
-                        <h4>John Smith</h4>
-                        <p>Adventure Traveler</p>
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Alex Morgan" class="author-img">
+                        <div class="author-info">
+                            <h4>Alex Morgan</h4>
+                            <p>Adventure Traveler</p>
+                        </div>
                     </div>
                 </div>
-                <div class="testimonial-card">
+                <div class="testimonial-slide">
                     <div class="testimonial-content">
-                        <p>"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
+                        "As a frequent traveler, I've experienced many agencies, but Travora Voyagers stands out. Their local expertise and access to unique experiences transformed our family vacation into an unforgettable adventure."
                     </div>
                     <div class="testimonial-author">
-                        <h4>Sarah Johnson</h4>
-                        <p>Cultural Explorer</p>
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Sarah Johnson" class="author-img">
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Family Travel Expert</p>
+                        </div>
                     </div>
                 </div>
-                <div class="testimonial-card">
+                <div class="testimonial-slide">
                     <div class="testimonial-content">
-                        <p>"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."</p>
+                        "The cultural immersion experiences curated by Travora Voyagers are exceptional. They connect you with authentic local communities in ways that typical tourism simply cannot match."
                     </div>
                     <div class="testimonial-author">
-                        <h4>Michael Chen</h4>
-                        <p>Family Vacationer</p>
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Michael Chen" class="author-img">
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Cultural Explorer</p>
+                        </div>
                     </div>
+                </div>
+                <div class="testimonial-nav">
+                    <span class="testimonial-dot active"></span>
+                    <span class="testimonial-dot"></span>
+                    <span class="testimonial-dot"></span>
                 </div>
             </div>
         </div>
@@ -162,9 +199,9 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2>Ready for Your Next Adventure?</h2>
-                <p>Contact us today to start planning your dream vacation</p>
-                <a href="contact.html" class="btn-primary">Get Started</a>
+                <h2>Ready to Begin Your Adventure?</h2>
+                <p>Contact our travel experts today to start planning your personalized journey</p>
+                <a href="contact.html" class="btn btn-primary">Start Planning Now</a>
             </div>
         </div>
     </section>
@@ -175,47 +212,70 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <a href="index.html" class="footer-logo">
-                        <img src="assets/images/logo.png" alt="Travora Voyagers Logo" class="logo-img">
-                        <span class="logo-text">
+                        <img src="assets/images/logo_white.png" alt="Travora Voyagers" class="logo-img">
+                        <div class="logo-text">
                             <span class="logo-main">TRAVORA</span>
                             <span class="logo-sub">VOYAGERS</span>
-                        </span>
+                        </div>
                     </a>
-                    <p>Creating unforgettable journeys since 2010. Your adventure begins here.</p>
+                    <p>Crafting extraordinary journeys since 2010. We transform travel dreams into unforgettable experiences through personalized service and global expertise.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
                     </div>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="blogs.html">Blogs</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blogs.html">Travel Blogs</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Services</h4>
+                    <h4>Destinations</h4>
                     <ul>
-                        <li><a href="#">Tour Packages</a></li>
-                        <li><a href="#">Hotel Booking</a></li>
-                        <li><a href="#">Travel Insurance</a></li>
-                        <li><a href="#">Visa Assistance</a></li>
+                        <li><a href="#">Europe Tours</a></li>
+                        <li><a href="#">Asia Adventures</a></li>
+                        <li><a href="#">African Safaris</a></li>
+                        <li><a href="#">Americas Exploration</a></li>
+                        <li><a href="#">Oceanic Getaways</a></li>
+                        <li><a href="#">Polar Expeditions</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Contact Info</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Adventure Street, Travel City</p>
-                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-                    <p><i class="fas fa-envelope"></i> hello@travoravoyagers.com</p>
+                    <div class="contact-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <p>123 Adventure Avenue</p>
+                            <p>Global City, GC 10101</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <p>+1 (555) 123-4567</p>
+                            <p>+1 (555) 987-6543</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <p>info@travoravoyagers.com</p>
+                            <p>support@travoravoyagers.com</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Travora Voyagers. All rights reserved.</p>
+                <p>&copy; 2024 Travora Voyagers. All rights reserved. | Crafted with DeepSeek</p>
             </div>
         </div>
     </footer>

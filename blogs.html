@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Blogs - Travora Voyagers</title>
+    <title>Travel Blogs</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -15,18 +16,17 @@
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">
-                <img src="assets/images/logo.png" alt="Travora Voyagers Logo" class="logo-img">
-                <span class="logo-text">
+                <img src="assets/images/logo.png" alt="Travora Voyagers" class="logo-img">
+                <div class="logo-text">
                     <span class="logo-main">TRAVORA</span>
                     <span class="logo-sub">VOYAGERS</span>
-                </span>
+                </div>
             </a>
             <div class="nav-links" id="navLinks">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="blogs.html" class="nav-link active">Blogs</a>
                 <a href="contact.html" class="nav-link">Contact</a>
-                <button class="book-btn">Book Now</button>
             </div>
             <div class="menu-toggle" id="menuToggle">
                 <i class="fas fa-bars"></i>
@@ -37,8 +37,8 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>Travel Blogs & Stories</h1>
-            <p>Discover insights, tips, and experiences from our travelers</p>
+            <h1>Travel Insights & Stories</h1>
+            <p>Discover expert tips, destination guides, and inspiring stories from our global adventures</p>
         </div>
     </section>
 
@@ -46,12 +46,12 @@
     <section class="categories-section">
         <div class="container">
             <div class="categories">
-                <button class="category-btn active">All</button>
+                <button class="category-btn active">All Stories</button>
+                <button class="category-btn">Destination Guides</button>
+                <button class="category-btn">Travel Tips</button>
                 <button class="category-btn">Adventure</button>
                 <button class="category-btn">Culture</button>
-                <button class="category-btn">Food</button>
-                <button class="category-btn">Tips</button>
-                <button class="category-btn">Destinations</button>
+                <button class="category-btn">Luxury</button>
             </div>
         </div>
     </section>
@@ -60,86 +60,98 @@
     <section class="blogs-section">
         <div class="container">
             <div class="blogs-grid">
-                <!-- Blog Post 1 -->
-                <article class="blog-post">
-                    <div class="blog-post-img" style="background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');"></div>
-                    <div class="blog-post-content">
-                        <div class="blog-meta">
-                            <span class="blog-category">Adventure</span>
-                            <span class="blog-date"><i class="far fa-calendar"></i> March 15, 2024</span>
+                <!-- Blog Card 1 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Mountain Adventures">
+                        <span class="blog-category">Adventure</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">
+                            <i class="far fa-calendar"></i> March 15, 2024
                         </div>
-                        <h3>Hiking the Majestic Mountain Trails</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
+                        <h3>Conquering the World's Most Epic Mountain Trails</h3>
+                        <p>Discover the ultimate guide to hiking the world's most breathtaking mountain trails, from preparation tips to must-see viewpoints.</p>
                         <a href="#" class="read-more">Read Full Story <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
 
-                <!-- Blog Post 2 -->
-                <article class="blog-post">
-                    <div class="blog-post-img" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');"></div>
-                    <div class="blog-post-content">
-                        <div class="blog-meta">
-                            <span class="blog-category">Beaches</span>
-                            <span class="blog-date"><i class="far fa-calendar"></i> February 28, 2024</span>
+                <!-- Blog Card 2 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Beach Paradise">
+                        <span class="blog-category">Luxury</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">
+                            <i class="far fa-calendar"></i> February 28, 2024
                         </div>
-                        <h3>Hidden Beach Paradises You Need to Visit</h3>
-                        <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+                        <h3>Hidden Island Paradises: Ultimate Luxury Getaways</h3>
+                        <p>Explore secluded island retreats that offer unparalleled luxury, privacy, and natural beauty away from crowded tourist spots.</p>
                         <a href="#" class="read-more">Read Full Story <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
 
-                <!-- Blog Post 3 -->
-                <article class="blog-post">
-                    <div class="blog-post-img" style="background-image: url('https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');"></div>
-                    <div class="blog-post-content">
-                        <div class="blog-meta">
-                            <span class="blog-category">Culture</span>
-                            <span class="blog-date"><i class="far fa-calendar"></i> February 10, 2024</span>
+                <!-- Blog Card 3 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Cultural Experience">
+                        <span class="blog-category">Culture</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">
+                            <i class="far fa-calendar"></i> February 10, 2024
                         </div>
-                        <h3>Cultural Immersion in Ancient Cities</h3>
-                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor...</p>
+                        <h3>Authentic Cultural Immersion: Beyond Tourist Attractions</h3>
+                        <p>Learn how to experience destinations like a local through authentic cultural exchanges and community-based tourism.</p>
                         <a href="#" class="read-more">Read Full Story <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
 
-                <!-- Blog Post 4 -->
-                <article class="blog-post">
-                    <div class="blog-post-img" style="background-image: url('https://images.unsplash.com/photo-1516483638261-f4dbaf036963?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');"></div>
-                    <div class="blog-post-content">
-                        <div class="blog-meta">
-                            <span class="blog-category">Tips</span>
-                            <span class="blog-date"><i class="far fa-calendar"></i> January 25, 2024</span>
+                <!-- Blog Card 4 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Northern Lights">
+                        <span class="blog-category">Adventure</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">
+                            <i class="far fa-calendar"></i> January 25, 2024
                         </div>
-                        <h3>Top 10 Travel Tips for First-Time Explorers</h3>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat...</p>
+                        <h3>Chasing the Aurora: Complete Guide to Northern Lights</h3>
+                        <p>Everything you need to know about planning the perfect Northern Lights adventure, from timing to photography tips.</p>
                         <a href="#" class="read-more">Read Full Story <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
 
-                <!-- Blog Post 5 -->
-                <article class="blog-post">
-                    <div class="blog-post-img" style="background-image: url('https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');"></div>
-                    <div class="blog-post-content">
-                        <div class="blog-meta">
-                            <span class="blog-category">Food</span>
-                            <span class="blog-date"><i class="far fa-calendar"></i> January 12, 2024</span>
+                <!-- Blog Card 5 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Food Journey">
+                        <span class="blog-category">Culture</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">
+                            <i class="far fa-calendar"></i> January 12, 2024
                         </div>
-                        <h3>Culinary Adventures Around the World</h3>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam...</p>
+                        <h3>Culinary Journeys: Tasting the World's Hidden Flavors</h3>
+                        <p>Embark on a global culinary adventure through local markets, cooking classes, and hidden foodie destinations.</p>
                         <a href="#" class="read-more">Read Full Story <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
 
-                <!-- Blog Post 6 -->
-                <article class="blog-post">
-                    <div class="blog-post-img" style="background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');"></div>
-                    <div class="blog-post-content">
-                        <div class="blog-meta">
-                            <span class="blog-category">Destinations</span>
-                            <span class="blog-date"><i class="far fa-calendar"></i> December 30, 2023</span>
+                <!-- Blog Card 6 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Road Trip">
+                        <span class="blog-category">Travel Tips</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">
+                            <i class="far fa-calendar"></i> December 30, 2023
                         </div>
-                        <h3>Underrated European Towns Worth Visiting</h3>
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione...</p>
+                        <h3>Ultimate Road Trip Planning: Routes, Tips & Essentials</h3>
+                        <p>Your comprehensive guide to planning the perfect road trip, from route selection to packing essentials and safety tips.</p>
                         <a href="#" class="read-more">Read Full Story <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
@@ -157,14 +169,14 @@
     </section>
 
     <!-- Newsletter -->
-    <section class="newsletter-section">
+    <section class="cta-section">
         <div class="container">
-            <div class="newsletter-content">
-                <h2>Stay Updated with Travel Tips</h2>
-                <p>Subscribe to our newsletter for the latest travel stories and exclusive offers</p>
+            <div class="cta-content">
+                <h2>Stay Inspired</h2>
+                <p>Subscribe to our newsletter for exclusive travel stories, expert tips, and special offers</p>
                 <form class="newsletter-form">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit" class="btn-primary">Subscribe</button>
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe Now</button>
                 </form>
             </div>
         </div>
@@ -176,43 +188,66 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <a href="index.html" class="footer-logo">
-                        <img src="assets/images/logo.png" alt="Travora Voyagers Logo" class="logo-img">
-                        <span class="logo-text">
+                        <img src="assets/images/logo_white.png" alt="Travora Voyagers" class="logo-img">
+                        <div class="logo-text">
                             <span class="logo-main">TRAVORA</span>
                             <span class="logo-sub">VOYAGERS</span>
-                        </span>
+                        </div>
                     </a>
-                    <p>Creating unforgettable journeys since 2010. Your adventure begins here.</p>
+                    <p>Crafting extraordinary journeys since 2010. We transform travel dreams into unforgettable experiences through personalized service and global expertise.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
                     </div>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="blogs.html">Blogs</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blogs.html">Travel Blogs</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Services</h4>
+                    <h4>Destinations</h4>
                     <ul>
-                        <li><a href="#">Tour Packages</a></li>
-                        <li><a href="#">Hotel Booking</a></li>
-                        <li><a href="#">Travel Insurance</a></li>
-                        <li><a href="#">Visa Assistance</a></li>
+                        <li><a href="#">Europe Tours</a></li>
+                        <li><a href="#">Asia Adventures</a></li>
+                        <li><a href="#">African Safaris</a></li>
+                        <li><a href="#">Americas Exploration</a></li>
+                        <li><a href="#">Oceanic Getaways</a></li>
+                        <li><a href="#">Polar Expeditions</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Contact Info</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Adventure Street, Travel City</p>
-                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-                    <p><i class="fas fa-envelope"></i> hello@travoravoyagers.com</p>
+                    <div class="contact-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <p>123 Adventure Avenue</p>
+                            <p>Global City, GC 10101</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <p>+1 (555) 123-4567</p>
+                            <p>+1 (555) 987-6543</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <p>info@travoravoyagers.com</p>
+                            <p>support@travoravoyagers.com</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
