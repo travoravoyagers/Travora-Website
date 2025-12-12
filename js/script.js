@@ -408,3 +408,159 @@ function initSmoothScrolling() {
         });
     });
 }
+
+
+// TEAM
+// Team Carousel Functionality
+const teamMembers = [
+    { 
+        name: "Sarah Johnson", 
+        role: "Founder & CEO",
+        desc: "20+ years in luxury travel and destination management."
+    },
+    { 
+        name: "Michael Chen", 
+        role: "Director of Operations",
+        desc: "Expertise in Asian and Pacific destinations."
+    },
+    { 
+        name: "Emily Rodriguez", 
+        role: "Adventure Specialist",
+        desc: "Certifications in mountain guiding and wilderness safety."
+    },
+    { 
+        name: "James Wilson", 
+        role: "Luxury Travel Consultant",
+        desc: "Specializing in exclusive retreats and VIP experiences."
+    },
+    { 
+        name: "David Miller", 
+        role: "Customer Experience Head",
+        desc: "15 years ensuring seamless travel journeys for clients."
+    }
+];
+
+const teamCards = document.querySelectorAll(".team-card");
+const teamDots = document.querySelectorAll(".team-dot");
+const teamName = document.querySelector(".team-name");
+const teamPosition = document.querySelector(".team-position");
+const teamDesc = document.querySelector(".team-desc");
+const leftBtn = document.querySelector(".team-left");
+const rightBtn = document.querySelector(".team-right");
+
+let teamIndex = 0;
+let teamAnimating = false;
+
+function updateTeamCarousel(newIndex) {
+    if (teamAnimating) return;
+    teamAnimating = true;
+    
+    teamIndex = (newIndex + teamCards.length) % teamCards.length;
+    
+    // Update cards positions
+    teamCards.forEach((card, i) => {
+        const offset = (i - teamIndex + teamCards.length) % teamCards.length;
+        card.classList.remove("center", "left-1", "left-2", "right-1", "right-2", "hidden");
+        
+        if (offset === 0) {
+            card.classList.add("center");
+        } else if (offset === 1) {
+            card.classList.add("right-1");
+        } else if (offset === 2) {
+            card.classList.add("right-2");
+        } else if (offset === teamCards.length - 1) {
+            card.classList.add("left-1");
+        } else if (offset === teamCards.length - 2) {
+            card.classList.add("left-2");
+        } else {
+            card.classList.add("hidden");
+        }
+    });
+    
+    // Update dots
+    teamDots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === teamIndex);
+    });
+    
+    // Update info with fade effect
+    teamName.style.opacity = "0";
+    teamPosition.style.opacity = "0";
+    teamDesc.style.opacity = "0";
+    
+    setTimeout(() => {
+        teamName.textContent = teamMembers[teamIndex].name;
+        teamPosition.textContent = teamMembers[teamIndex].role;
+        teamDesc.textContent = teamMembers[teamIndex].desc;
+        teamName.style.opacity = "1";
+        teamPosition.style.opacity = "1";
+        teamDesc.style.opacity = "1";
+    }, 300);
+    
+    setTimeout(() => {
+        teamAnimating = false;
+    }, 800);
+}
+
+// Event Listeners
+leftBtn.addEventListener("click", () => updateTeamCarousel(teamIndex - 1));
+rightBtn.addEventListener("click", () => updateTeamCarousel(teamIndex + 1));
+
+teamDots.forEach((dot, i) => {
+    dot.addEventListener("click", () => updateTeamCarousel(i));
+});
+
+teamCards.forEach((card, i) => {
+    card.addEventListener("click", () => {
+        if (i !== teamIndex) {
+            updateTeamCarousel(i);
+        }
+    });
+});
+
+// Keyboard Navigation
+document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") updateTeamCarousel(teamIndex - 1);
+    else if (e.key === "ArrowRight") updateTeamCarousel(teamIndex + 1);
+});
+
+// Touch Swipe Support
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.querySelector('.team-carousel').addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+});
+
+document.querySelector('.team-carousel').addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    const diff = touchStartX - touchEndX;
+    
+    if (Math.abs(diff) > 50) {
+        if (diff > 0) {
+            updateTeamCarousel(teamIndex + 1); // Swipe left
+        } else {
+            updateTeamCarousel(teamIndex - 1); // Swipe right
+        }
+    }
+});
+
+// Auto-rotate (optional)
+let autoRotateInterval;
+
+function startAutoRotate() {
+    autoRotateInterval = setInterval(() => {
+        updateTeamCarousel(teamIndex + 1);
+    }, 4000);
+}
+
+function stopAutoRotate() {
+    clearInterval(autoRotateInterval);
+}
+
+// Pause auto-rotate on hover
+document.querySelector('.team-carousel').addEventListener('mouseenter', stopAutoRotate);
+document.querySelector('.team-carousel').addEventListener('mouseleave', startAutoRotate);
+
+// Initialize
+updateTeamCarousel(0);
+startAutoRotate();

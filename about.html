@@ -17,10 +17,6 @@
         <div class="container">
             <a href="index.html" class="logo">
                 <img src="assets/images/logo.png" alt="Travora Voyagers" class="logo-img">
-                <div class="logo-text">
-                    <span class="logo-main">TRAVORA</span>
-                    <span class="logo-sub">VOYAGERS</span>
-                </div>
             </a>
             <div class="nav-links" id="navLinks">
                 <a href="index.html" class="nav-link">Home</a>
@@ -89,28 +85,6 @@
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <span class="stat-number" data-count="5000">0</span>
-                    <span class="stat-label">Happy Travelers</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-count="150">0</span>
-                    <span class="stat-label">Destinations</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-count="14">0</span>
-                    <span class="stat-label">Years Experience</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-count="24">0</span>
-                    <span class="stat-label">/7 Support</span>
-                </div>
-            </div>
-        </div>
     </section>
 
     <!-- Gallery Carousel -->
@@ -166,43 +140,69 @@
         </div>
     </section>
 
-    <!-- Team Section -->
-    <section class="why-section">
-        <div class="container">
-            <h2 class="section-title">Meet Our <span class="highlight">Experts</span></h2>
-            <div class="reasons">
-                <div class="reason-card">
-                    <div class="reason-icon">
-                        <i class="fas fa-user-tie"></i>
+<!-- Team Section -->
+<section class="team-section">
+    <div class="container">
+        <h2 class="section-title">Meet Our <span class="highlight">Team</span></h2>
+        <p class="section-subtitle">Our passionate team of travel experts dedicated to creating unforgettable journeys</p>
+        
+        <div class="team-carousel">
+            <button class="team-arrow team-left">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <div class="team-track">
+                <div class="team-card" data-index="0">
+                    <div class="team-img">
+                        <img src="assets/images/Member.jpeg" alt="Sarah Johnson">
                     </div>
-                    <h3>Sarah Johnson</h3>
-                    <p>Founder & CEO with 20+ years in luxury travel and destination management.</p>
                 </div>
-                <div class="reason-card">
-                    <div class="reason-icon">
-                        <i class="fas fa-map-marked-alt"></i>
+                
+                <div class="team-card" data-index="1">
+                    <div class="team-img">
+                        <img src="assets/images/Member.jpeg" alt="Michael Chen">
                     </div>
-                    <h3>Michael Chen</h3>
-                    <p>Director of Operations with expertise in Asian and Pacific destinations.</p>
                 </div>
-                <div class="reason-card">
-                    <div class="reason-icon">
-                        <i class="fas fa-mountain"></i>
+                
+                <div class="team-card" data-index="2">
+                    <div class="team-img">
+                        <img src="assets/images/Member.jpeg" alt="Emily Rodriguez">
                     </div>
-                    <h3>Emily Rodriguez</h3>
-                    <p>Adventure Specialist with certifications in mountain guiding and wilderness safety.</p>
                 </div>
-                <div class="reason-card">
-                    <div class="reason-icon">
-                        <i class="fas fa-gem"></i>
+                
+                <div class="team-card" data-index="3">
+                    <div class="team-img">
+                        <img src="assets/images/Member.jpeg" alt="James Wilson">
                     </div>
-                    <h3>James Wilson</h3>
-                    <p>Luxury Travel Consultant specializing in exclusive retreats and VIP experiences.</p>
+                </div>
+                
+                <div class="team-card" data-index="4">
+                    <div class="team-img">
+                        <img src="assets/images/Member.jpeg" alt="David Miller">
+                    </div>
                 </div>
             </div>
+            
+            <button class="team-arrow team-right">
+                <i class="fas fa-chevron-right"></i>
+            </button>
         </div>
-    </section>
-
+        
+        <div class="team-info">
+            <h3 class="team-name">Sarah Johnson</h3>
+            <p class="team-position">Founder & CEO</p>
+            <p class="team-desc">20+ years in luxury travel and destination management.</p>
+        </div>
+        
+        <div class="team-dots">
+            <div class="team-dot active" data-index="0"></div>
+            <div class="team-dot" data-index="1"></div>
+            <div class="team-dot" data-index="2"></div>
+            <div class="team-dot" data-index="3"></div>
+            <div class="team-dot" data-index="4"></div>
+        </div>
+    </div>
+</section>
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
@@ -218,72 +218,81 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
+                <div class="footer-section brand-section">
                     <a href="index.html" class="footer-logo">
                         <img src="assets/images/logo_white.png" alt="Travora Voyagers" class="logo-img">
-                        <div class="logo-text">
-                            <span class="logo-main">TRAVORA</span>
-                            <span class="logo-sub">VOYAGERS</span>
-                        </div>
                     </a>
-                    <p>Crafting extraordinary journeys since 2010. We transform travel dreams into unforgettable experiences through personalized service and global expertise.</p>
+                    <p class="footer-description">Crafting extraordinary journeys since 2010. We transform travel dreams into unforgettable experiences through personalized service and global expertise.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" aria-label="Facebook" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" aria-label="LinkedIn" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" aria-label="Pinterest" class="social-link">
+                            <i class="fab fa-pinterest-p"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="blogs.html">Travel Blogs</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="about.html" class="footer-link">About Us</a></li>
+                        <li><a href="blogs.html" class="footer-link">Travel Blogs</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+                        <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                        <li><a href="#" class="footer-link">Terms of Service</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Destinations</h4>
-                    <ul>
-                        <li><a href="#">Europe Tours</a></li>
-                        <li><a href="#">Asia Adventures</a></li>
-                        <li><a href="#">African Safaris</a></li>
-                        <li><a href="#">Americas Exploration</a></li>
-                        <li><a href="#">Oceanic Getaways</a></li>
-                        <li><a href="#">Polar Expeditions</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact Info</h4>
-                    <div class="contact-info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <p>123 Adventure Avenue</p>
-                            <p>Global City, GC 10101</p>
+                    <h4 class="footer-title">Contact Info</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <p>123 Adventure Avenue</p>
+                                <p>Global City, GC 10101</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="contact-info-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <p>+1 (555) 123-4567</p>
-                            <p>+1 (555) 987-6543</p>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <a href="tel:+15551234567" class="contact-link">+1 (555) 123-4567</a>
+                                <a href="tel:+15559876543" class="contact-link">+1 (555) 987-6543</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="contact-info-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <p>info@travoravoyagers.com</p>
-                            <p>support@travoravoyagers.com</p>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <a href="mailto:info@travoravoyagers.com" class="contact-link">info@travoravoyagers.com</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Travora Voyagers. All rights reserved.</p>
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Travora Voyagers. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#" class="legal-link">Privacy Policy</a>
+                        <a href="#" class="legal-link">Terms of Service</a>
+                        <a href="#" class="legal-link">Cookie Policy</a>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
