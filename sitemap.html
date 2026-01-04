@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap | Travora Voyagers</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== SITEMAP PAGE STYLES ===== */
+        .sitemap-page {
+            background: var(--light-color);
+            min-height: 100vh;
+        }
+
+        .sitemap-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                        url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 140px 0 80px;
+            text-align: center;
+            color: var(--white);
+            margin-top: 86px;
+        }
+
+        .sitemap-header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .sitemap-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .sitemap-content {
+            padding: 80px 0;
+        }
+
+        .sitemap-intro {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .sitemap-intro h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            color: var(--dark-color);
+            margin-bottom: 20px;
+        }
+
+        .sitemap-intro p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .sitemap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .sitemap-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .sitemap-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(42, 157, 143, 0.1) 0%, rgba(233, 196, 106, 0.1) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+        }
+
+        .card-icon i {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        .sitemap-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .sitemap-card p {
+            color: var(--text-light);
+            margin-bottom: 25px;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .sitemap-card .btn {
+            padding: 12px 30px;
+            font-size: 0.95rem;
+        }
+
+        .site-structure {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 50px;
+            box-shadow: var(--shadow);
+            margin-bottom: 60px;
+        }
+
+        .site-structure h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            color: var(--dark-color);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .structure-diagram {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .structure-item {
+            text-align: center;
+            min-width: 150px;
+        }
+
+        .structure-circle {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: var(--white);
+            font-size: 1.5rem;
+        }
+
+        .structure-label {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--dark-color);
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .structure-url {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            word-break: break-all;
+        }
+
+        .structure-arrow {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .site-info {
+            background: linear-gradient(135deg, #f8f9fa 0%, #f0f7f6 100%);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .site-info h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            margin-bottom: 25px;
+        }
+
+        .current-page {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .current-page::before {
+            content: 'Current Page';
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: var(--secondary-color);
+            color: var(--dark-color);
+            padding: 5px 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transform: rotate(45deg);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .sitemap-header {
+                padding: 100px 0 60px;
+                margin-top: 72px;
+            }
+            
+            .sitemap-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .sitemap-content {
+                padding: 60px 0;
+            }
+            
+            .sitemap-intro h2 {
+                font-size: 1.8rem;
+            }
+            
+            .site-structure {
+                padding: 30px 20px;
+            }
+            
+            .structure-diagram {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .structure-arrow {
+                transform: rotate(90deg);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .sitemap-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .sitemap-header p {
+                font-size: 1rem;
+            }
+            
+            .sitemap-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .sitemap-card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body class="sitemap-page">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Travora Voyagers" class="logo-img">
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="blogs.html" class="nav-link">Blogs</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="sitemap-header">
+        <div class="container">
+            <h1>Website Sitemap</h1>
+            <p>Complete overview of all pages on Travora Voyagers</p>
+        </div>
+    </header>
+
+    <!-- Sitemap Content -->
+    <main class="sitemap-content">
+        <div class="container">
+            <div class="sitemap-intro">
+                <h2>All Website Pages</h2>
+                <p>Navigate through our complete website structure. All pages are listed below with direct access links.</p>
+            </div>
+
+            <!-- Page Cards -->
+            <div class="sitemap-grid">
+                <!-- Home Page -->
+                <div class="sitemap-card">
+                    <div class="card-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Home Page</h3>
+                    <p>Main landing page with featured destinations, company highlights, testimonials, and calls to action.</p>
+                    <a href="index.html" class="btn btn-primary">Visit Home</a>
+                </div>
+
+                <!-- About Page -->
+                <div class="sitemap-card">
+                    <div class="card-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h3>About Us</h3>
+                    <p>Learn about our story, mission, values, and team. Discover what makes our travel experiences unique.</p>
+                    <a href="about.html" class="btn btn-primary">Learn More</a>
+                </div>
+
+                <!-- Blogs Page -->
+                <div class="sitemap-card">
+                    <div class="card-icon">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <h3>Travel Blogs</h3>
+                    <p>Read curated travel articles, destination guides, travel tips, and inspirational stories.</p>
+                    <a href="blogs.html" class="btn btn-primary">Read Blogs</a>
+                </div>
+
+                <!-- Contact Page -->
+                <div class="sitemap-card">
+                    <div class="card-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Contact Us</h3>
+                    <p>Get in touch with our travel experts. Submit inquiries or request personalized travel planning.</p>
+                    <a href="contact.html" class="btn btn-primary">Contact Now</a>
+                </div>
+
+                <!-- Current Page -->
+                <div class="sitemap-card current-page">
+                    <div class="card-icon">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <h3>Sitemap</h3>
+                    <p>Complete overview of all website pages. This page helps with navigation and accessibility.</p>
+                    <a href="sitemap.html" class="btn btn-secondary">You Are Here</a>
+                </div>
+            </div>
+
+            <!-- Site Structure Diagram -->
+            <div class="site-structure">
+                <h3>Website Structure</h3>
+                <div class="structure-diagram">
+                    <div class="structure-item">
+                        <div class="structure-circle">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="structure-label">Home</div>
+                        <div class="structure-url">index.html</div>
+                    </div>
+                    
+                    <div class="structure-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    
+                    <div class="structure-item">
+                        <div class="structure-circle">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <div class="structure-label">About</div>
+                        <div class="structure-url">about.html</div>
+                    </div>
+                    
+                    <div class="structure-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    
+                    <div class="structure-item">
+                        <div class="structure-circle">
+                            <i class="fas fa-newspaper"></i>
+                        </div>
+                        <div class="structure-label">Blogs</div>
+                        <div class="structure-url">blogs.html</div>
+                    </div>
+                    
+                    <div class="structure-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    
+                    <div class="structure-item">
+                        <div class="structure-circle">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="structure-label">Contact</div>
+                        <div class="structure-url">contact.html</div>
+                    </div>
+                </div>
+                <p style="text-align: center; color: var(--text-light); margin-top: 30px;">
+                    <i class="fas fa-info-circle" style="color: var(--primary-color); margin-right: 8px;"></i>
+                    Simple linear structure for easy navigation
+                </p>
+            </div>
+
+            <!-- Site Information -->
+            <div class="site-info">           
+                <p style="color: var(--text-light); max-width: 600px; margin: 0 auto 20px; line-height: 1.6;">
+                    This sitemap provides a complete overview of all accessible pages on the Travora Voyagers website. 
+                    Our simple, intuitive structure ensures optimal user experience and easy navigation.
+                </p>
+                
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px;">
+                    <a href="index.html" class="btn btn-primary">
+                        <i class="fas fa-home"></i> Back to Home
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary">
+                        <i class="fas fa-question-circle"></i> Need Help?
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section brand-section">
+                    <a href="index.html" class="footer-logo">
+                        <img src="assets/images/logo_white.png" alt="Travora Voyagers" class="logo-img">
+                    </a>
+                    <p class="footer-description">Crafting extraordinary journeys since 2010. We transform travel dreams into unforgettable experiences through personalized service and global expertise.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="about.html" class="footer-link">About Us</a></li>
+                        <li><a href="blogs.html" class="footer-link">Blogs</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+                        <li><a href="sitemap.html" class="footer-link">Sitemap</a></li>
+                        <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact Info</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <a href="tel:+15551234567" class="contact-link">+1 (555) 123-4567</a>
+                                <a href="tel:+15559876543" class="contact-link">+1 (555) 987-6543</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <a href="mailto:info@travoravoyagers.com" class="contact-link">info@travoravoyagers.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; <span id="footerYear">2024</span> Travora Voyagers. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#" class="legal-link">Privacy Policy</a>
+                        <a href="#" class="legal-link">Terms of Service</a>
+                        <a href="#" class="legal-link">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
