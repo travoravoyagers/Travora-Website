@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+<<<<<<< HEAD
         /* ===== SITEMAP PAGE STYLES ===== */
         .sitemap-page {
             background: var(--light-color);
@@ -125,10 +126,51 @@
         }
 
         .site-structure {
+=======
+        body {
+            background: var(--white);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Hero Section */
+        .sitemap-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 86px;
+            padding: 80px 20px;
+        }
+
+        .sitemap-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        /* Sitemap Content */
+        .sitemap-content {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .pages-list-container {
+            max-width: 900px;
+            margin: 0 auto;
+>>>>>>> my-fix
             background: var(--white);
             border-radius: var(--border-radius);
             padding: 50px;
             box-shadow: var(--shadow);
+<<<<<<< HEAD
             margin-bottom: 60px;
         }
 
@@ -227,12 +269,89 @@
             
             .sitemap-header h1 {
                 font-size: 2.2rem;
+=======
+        }
+
+        .pages-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .pages-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: left;
+        }
+
+        .page-link {
+            display: flex;
+            align-items: left;
+            min-height: 60px;
+            padding: 0 25px;
+            background: var(--light-color);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 1.2rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-color);
+            width: 100%;
+            text-align: center;
+            justify-content: left;
+        }
+
+        .page-link span {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: normal;
+        }
+
+        .page-link:hover {
+            background: linear-gradient(to right, rgba(42, 157, 143, 0.1), rgba(42, 157, 143, 0.05));
+            color: var(--primary-color);
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Current Page */
+        .page-link.current {
+            background: linear-gradient(to right, rgba(42, 157, 143, 0.15), rgba(42, 157, 143, 0.1));
+            border-left-color: var(--secondary-color);
+            color: var(--primary-dark);
+        }
+
+        @media (max-width: 992px) {
+            .pages-list-container {
+                padding: 40px 30px;
+            }
+            
+            .page-link {
+                font-size: 1.1rem;
+                min-height: 55px;
+                padding: 0 20px;
+            }
+  
+        }
+
+        @media (max-width: 768px) {
+            .sitemap-hero {
+                min-height: 350px;
+                margin-top: 72px;
+                padding: 60px 20px;
+            }
+            
+            .sitemap-title {
+                font-size: 2.5rem;
+>>>>>>> my-fix
             }
             
             .sitemap-content {
                 padding: 60px 0;
             }
             
+<<<<<<< HEAD
             .sitemap-intro h2 {
                 font-size: 1.8rem;
             }
@@ -266,11 +385,57 @@
             
             .sitemap-card {
                 padding: 30px 20px;
+=======
+            .pages-list-container {
+                padding: 30px 20px;
+                margin: 0 20px;
+            }
+            
+            .page-link {
+                font-size: 1rem;
+                min-height: 50px;
+                padding: 0 18px;
+            }
+            
+        }
+
+        @media (max-width: 576px) {
+            .sitemap-title {
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+            
+            .sitemap-hero {
+                min-height: 300px;
+                padding: 40px 20px;
+            }
+            
+            .page-link {
+                font-size: 0.95rem;
+                min-height: 45px;
+                padding: 0 16px;
+            }
+            
+            .pages-list li {
+                margin-bottom: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-link {
+                font-size: 0.9rem;
+                min-height: 40px;
+                padding: 0 14px;
+>>>>>>> my-fix
             }
         }
     </style>
 </head>
+<<<<<<< HEAD
 <body class="sitemap-page">
+=======
+<body>
+>>>>>>> my-fix
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -289,6 +454,7 @@
         </div>
     </nav>
 
+<<<<<<< HEAD
     <!-- Page Header -->
     <header class="sitemap-header">
         <div class="container">
@@ -430,6 +596,57 @@
             </div>
         </div>
     </main>
+=======
+    <!-- Hero Section -->
+    <section class="sitemap-hero">
+        <div class="container">
+            <h1 class="sitemap-title">Website Sitemap</h1>
+            <a href="index.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 15px 40px; display: inline-block;">
+                <i class="fas fa-home"></i> Back to Home
+            </a>
+        </div>
+    </section>
+
+    <!-- Sitemap Content -->
+    <section class="sitemap-content">
+        <div class="container">
+            <div class="pages-list-container">
+                <ul class="pages-list">
+                    <li>
+                         
+                        <a href="index.html" class="page-link">
+                            <span>Home Page</span>
+                        </a>
+                    </li>
+                    <li>
+                         
+                        <a href="about.html" class="page-link">
+                            <span>About Us</span>
+                        </a>
+                    </li>
+                    <li>
+                         
+                        <a href="blogs.html" class="page-link">
+                            <span>Travel Blogs</span>
+                        </a>
+                    </li>
+                    <li>
+                         
+                        <a href="contact.html" class="page-link">
+                            <span>Contact Us</span>
+                        </a>
+                    </li>
+                    <li>
+                         
+                        <a href="sitemap.html" class="page-link current">
+                            <span>Sitemap (You are here)</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+>>>>>>> my-fix
 
     <!-- Footer -->
     <footer class="footer">
@@ -485,7 +702,11 @@
             </div>
             <div class="footer-bottom">
                 <div class="footer-bottom-content">
+<<<<<<< HEAD
                     <p>&copy; <span id="footerYear">2024</span> Travora Voyagers. All rights reserved.</p>
+=======
+                    <p>&copy; 2024 Travora Voyagers. All rights reserved.</p>
+>>>>>>> my-fix
                     <div class="footer-legal">
                         <a href="#" class="legal-link">Privacy Policy</a>
                         <a href="#" class="legal-link">Terms of Service</a>
@@ -495,5 +716,9 @@
             </div>
         </div>
     </footer>
+<<<<<<< HEAD
+=======
+
+>>>>>>> my-fix
 </body>
 </html>
