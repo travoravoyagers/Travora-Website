@@ -1,13 +1,12 @@
 // ==================== GLOBAL INITIALIZATION ====================
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('🚀 Travora Voyagers Website Loaded');
+    console.log('ðŸš€ Travora Voyagers Website Loaded');
     
 
     initNavigation();
     initCarousels();
     initTestimonialSlider();
     initFAQAccordion();
-    initForms();
     initBlogFilter();
     initSmoothScrolling();
     
@@ -305,48 +304,7 @@ function initFAQAccordion() {
 }
 
 // ==================== FORM HANDLER ====================
-function initForms() {
-    const forms = document.querySelectorAll('form');
-    if (forms.length === 0) return;
-    
-    forms.forEach(form => {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            handleSubmit(form);
-        });
-    });
-    
-    function handleSubmit(form) {
-        const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');
-        let isValid = true;
-        
-        inputs.forEach(input => {
-            if (!input.value.trim()) {
-                isValid = false;
-                input.style.borderColor = '#dc3545';
-            } else {
-                input.style.borderColor = '';
-            }
-            
-            // Email validation
-            if (input.type === 'email' && input.value) {
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(input.value)) {
-                    isValid = false;
-                    input.style.borderColor = '#dc3545';
-                }
-            }
-        });
-        
-        if (isValid) {
-            // Show success message
-            alert('Thank you! Your message has been sent successfully.');
-            form.reset();
-        } else {
-            alert('Please fill in all required fields correctly.');
-        }
-    }
-}
+
 
 // ==================== BLOG FILTER ====================
 function initBlogFilter() {
@@ -414,29 +372,29 @@ function initSmoothScrolling() {
 // Team Carousel Functionality
 const teamMembers = [
     { 
-        name: "Sarah Johnson", 
-        role: "Founder & CEO",
-        desc: "20+ years in luxury travel and destination management."
+        name: "Abhiman Dharmik", 
+        role: "Co-Founder | Travel Strategy & Community Lead",
+        desc: "One of the core minds behind Travora Voyagers. A seasoned traveler who shapes travel ideas, builds practical itineraries, connects easily with people on the road, and brings strong negotiation and coordination skills to every journey."
     },
     { 
-        name: "Michael Chen", 
-        role: "Director of Operations",
-        desc: "Expertise in Asian and Pacific destinations."
+        name: "Muhammed Ansari", 
+        role: "Co-Founder | Content & Platform Lead",
+        desc: "Drives Travora's content strategy and digital direction. Focuses on planning platform ideas, structuring experiences, and shaping the long-term vision for Travora's web and app ecosystem."
     },
     { 
-        name: "Emily Rodriguez", 
-        role: "Adventure Specialist",
-        desc: "Certifications in mountain guiding and wilderness safety."
+        name: "Ajmal Shareef", 
+        role: "Creative Lead | Visual Design",
+        desc: "Responsible for visual storytelling through posters and video edits. Supports content with creative ideas and design improvements across Travora's digital platforms."
     },
     { 
-        name: "James Wilson", 
-        role: "Luxury Travel Consultant",
-        desc: "Specializing in exclusive retreats and VIP experiences."
+        name: "Devan M", 
+        role: "Product & Technology Support",
+        desc: "Contributes to Travora's app development and technical planning. Brings a travel-focused mindset while balancing product ideas with real-world feasibility and execution."
     },
     { 
-        name: "David Miller", 
-        role: "Customer Experience Head",
-        desc: "15 years ensuring seamless travel journeys for clients."
+        name: "Adhil Mohammed", 
+        role: "Field Operations & Journey Support",
+        desc: "Plays a key role during trips by supporting coordination and on-ground execution. A consistent presence that strengthens team dynamics and travel flow."
     }
 ];
 
